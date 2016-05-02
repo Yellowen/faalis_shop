@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: faalis_blog
+  password: "123456"
+
+development:
+  <<: *default
+  database: faalis_blog_dev
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: postgresql
+  database: faalis_blog_test
+  username: faalis_blog
+  password: "123456"
+
+production:
+  <<: *default
+  database: faalis_blog
