@@ -4,6 +4,7 @@ Faalis::Shop::Engine.routes.draw do
 
   in_dashboard do
     resources :categories
+    resources :categories
     resources :posts
   end
 end
