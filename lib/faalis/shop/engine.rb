@@ -6,7 +6,7 @@ module Faalis
       engine_name 'faalis_shop'
 
       mattr_accessor :index_url_prefix do
-        'posts'
+        'shop'
       end
 
       mattr_accessor :default_layout do
