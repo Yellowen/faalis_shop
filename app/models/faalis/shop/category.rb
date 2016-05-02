@@ -6,7 +6,10 @@
 #  title        :string
 #  description  :text
 #  permalink    :string
+#  parent_id    :integer
+#  lock         :boolean          default(TRUE)
 #  members_only :boolean          default(FALSE)
+#  user_id      :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  domain_id    :integer
@@ -17,15 +20,27 @@ module Faalis::Shop
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
-    validates :permalink, uniqueness: true
-
-    has_many :posts, class_name: 'Faalis::Shop::Post'
+    belongs_to :parent, class_name: self.to_s
+    #has_many :products, class_name: 'Faalis::Shop::Product'
 
     validates_presence_of :title
     validates_presence_of :permalink
+    validates :permalink, uniqueness: true
+    validates :permalink, uniqueness: true
+
+    scope :available, -> { where(lock: false) }
+    scope :visible, lambda { |signed_in| signed_in ? all : where(members_only: false) }
 
     def name
       title
+    end
+
+    def locked?
+      lock
+    end
+
+    def memebers_only?
+      members_only
     end
   end
 end
