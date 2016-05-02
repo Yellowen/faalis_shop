@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: faalis_blog_categories
+# Table name: faalis_shop_categories
 #
 #  id           :integer          not null, primary key
 #  title        :string
@@ -12,14 +12,14 @@
 #  domain_id    :integer
 #
 
-module Faalis::Blog
+module Faalis::Shop
   class Category < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
     include ::SiteFramework::DomainAware
 
     validates :permalink, uniqueness: true
 
-    has_many :posts, class_name: 'Faalis::Blog::Post'
+    has_many :posts, class_name: 'Faalis::Shop::Post'
 
     validates_presence_of :title
     validates_presence_of :permalink

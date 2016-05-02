@@ -1,6 +1,6 @@
 require 'faker'
 
-Fabricator :category, class_name: 'Faalis::Blog::Category' do
+Fabricator :category, class_name: 'Faalis::Shop::Category' do
   title { Faker::Name.title }
 
   description 'sme desc'

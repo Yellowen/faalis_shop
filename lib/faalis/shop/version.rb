@@ -1,5 +1,5 @@
 module Faalis
-  module Blog
+  module Shop
     VERSION = '0.2.0'
   end
 end

@@ -1,2 +1,2 @@
-class Faalis::Blog::PostPolicy < ::ApplicationPolicy
+class Faalis::Shop::PostPolicy < ::ApplicationPolicy
 end

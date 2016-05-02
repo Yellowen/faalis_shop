@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160419114006) do
     t.datetime "updated_at"
   end
 
-  create_table "faalis_blog_categories", force: :cascade do |t|
+  create_table "faalis_shop_categories", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "permalink"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160419114006) do
     t.integer  "domain_id"
   end
 
-  create_table "faalis_blog_posts", force: :cascade do |t|
+  create_table "faalis_shop_posts", force: :cascade do |t|
     t.string   "title"
     t.string   "permalink"
     t.text     "raw_content"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160419114006) do
     t.integer  "domain_id"
   end
 
-  add_index "faalis_blog_posts", ["category_id"], name: "index_faalis_blog_posts_on_category_id", using: :btree
+  add_index "faalis_shop_posts", ["category_id"], name: "index_faalis_shop_posts_on_category_id", using: :btree
 
   create_table "faalis_comments", force: :cascade do |t|
     t.integer  "commentable_id"

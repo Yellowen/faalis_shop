@@ -1,3 +1,3 @@
-class Faalis::Blog::Dashboard::CategoriesController < ::Dashboard::ApplicationController
-  engine 'Faalis::Blog::Engine'
+class Faalis::Shop::Dashboard::CategoriesController < ::Dashboard::ApplicationController
+  engine 'Faalis::Shop::Engine'
 end

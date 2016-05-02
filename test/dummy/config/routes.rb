@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # Your dashboard routes goes here.
   end
 
-  mount Faalis::Blog::Engine => "/"
+  mount Faalis::Shop::Engine => "/"
 
   root 'welcome#index'
 end

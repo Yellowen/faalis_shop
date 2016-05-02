@@ -1,4 +1,4 @@
-module Faalis::Blog
+module Faalis::Shop
   class CategoryPolicy < ::ApplicationPolicy
     class Scope < Scope
       def resolve

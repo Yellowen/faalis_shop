@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Faalis::Blog
+module Faalis::Shop
   class PostsControllerTest < ::ActionController::TestCase
     include Devise::TestHelpers
-    tests ::Faalis::Blog::PostsController
+    tests ::Faalis::Shop::PostsController
 
     setup do
       @routes = Engine.routes

@@ -1,1 +1,1 @@
-require 'faalis/blog'
+require 'faalis/shop'

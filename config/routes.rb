@@ -1,6 +1,6 @@
-Faalis::Blog::Engine.routes.draw do
+Faalis::Shop::Engine.routes.draw do
 
-  get "#{Faalis::Blog::Engine.index_url_prefix}", to: 'posts#index', as: :index
+  get "#{Faalis::Shop::Engine.index_url_prefix}", to: 'posts#index', as: :index
 
   in_dashboard do
     resources :categories

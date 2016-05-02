@@ -3,7 +3,7 @@ class Dashboard::ApplicationController < Faalis::Dashboard::ApplicationControlle
   def setup_sidebar
     @sidebar = sidebar(t('faalis.engine_name')) do |s|
       s.faalis_entries
-      s.blog_entries
+      s.shop_entries
     end
   end
 end

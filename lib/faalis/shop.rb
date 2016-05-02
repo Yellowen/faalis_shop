@@ -3,9 +3,9 @@ require 'redcarpet'
 require 'faalis/tags'
 
 module Faalis
-  module Blog
+  module Shop
   end
 end
 
-require 'faalis/blog/engine'
-require 'faalis/blog/sidebar'
+require 'faalis/shop/engine'
+require 'faalis/shop/sidebar'

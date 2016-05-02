@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: faalis_blog_categories
+# Table name: faalis_shop_categories
 #
 #  id           :integer          not null, primary key
 #  title        :string
@@ -14,10 +14,10 @@
 
 require 'test_helper'
 
-module Faalis::Blog
+module Faalis::Shop
   class CategoryTest < ActiveSupport::TestCase
 
-    @@subject = ::Faalis::Blog::Category
+    @@subject = ::Faalis::Shop::Category
 
     test "won't save without a title" do
       subject = @@subject.new(permalink: 'category-1')

@@ -1,6 +1,6 @@
 require 'faker'
 
-Fabricator :post, class_name: 'Faalis::Blog::Post' do
+Fabricator :post, class_name: 'Faalis::Shop::Post' do
   title { Faker::Name.title }
   raw_content '#test1'
   permalink 'category-1'
