@@ -11,62 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419114006) do
+ActiveRecord::Schema.define(version: 20160502110138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "application_models", force: :cascade do |t|
-    t.string   "model"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "faalis_shop_categories", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "permalink"
-    t.boolean  "members_only", default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "domain_id"
-  end
-
-  create_table "faalis_shop_posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "permalink"
-    t.text     "raw_content"
-    t.text     "content"
-    t.integer  "category_id",                      null: false
-    t.boolean  "published"
-    t.integer  "user_id",                          null: false
-    t.boolean  "allow_comments",   default: true
-    t.boolean  "members_only",     default: false
-    t.string   "meta_title"
-    t.string   "meta_description"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-    t.integer  "domain_id"
-  end
-
-  add_index "faalis_shop_posts", ["category_id"], name: "index_faalis_shop_posts_on_category_id", using: :btree
-
-  create_table "faalis_comments", force: :cascade do |t|
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.string   "title"
-    t.text     "body"
-    t.string   "subject"
-    t.integer  "user_id",          null: false
-    t.integer  "parent_id"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "faalis_comments", ["commentable_id", "commentable_type"], name: "index_faalis_comments_on_commentable_id_and_commentable_type", using: :btree
-  add_index "faalis_comments", ["user_id"], name: "index_faalis_comments_on_user_id", using: :btree
 
   create_table "faalis_groups", force: :cascade do |t|
     t.string   "name"
@@ -97,6 +45,21 @@ ActiveRecord::Schema.define(version: 20160419114006) do
   end
 
   add_index "faalis_permissions", ["model"], name: "index_faalis_permissions_on_model", using: :btree
+
+  create_table "faalis_shop_categories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "permalink"
+    t.integer  "parent_id"
+    t.boolean  "lock",         default: true
+    t.boolean  "members_only", default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "domain_id"
+  end
+
+  add_index "faalis_shop_categories", ["permalink"], name: "index_faalis_shop_categories_on_permalink", using: :btree
 
   create_table "faalis_user_messages", force: :cascade do |t|
     t.integer  "sender_id"
@@ -134,25 +97,6 @@ ActiveRecord::Schema.define(version: 20160419114006) do
   add_index "faalis_users", ["email"], name: "index_faalis_users_on_email", unique: true, using: :btree
   add_index "faalis_users", ["reset_password_token"], name: "index_faalis_users_on_reset_password_token", unique: true, using: :btree
   add_index "faalis_users", ["unlock_token"], name: "index_faalis_users_on_unlock_token", unique: true, using: :btree
-
-  create_table "site_framework_domains", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "site_id"
-    t.integer  "parent_id"
-    t.boolean  "alias",      default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "site_framework_domains", ["name"], name: "index_site_framework_domains_on_name", unique: true, using: :btree
-
-  create_table "site_framework_sites", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "default_template", default: ""
-  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
