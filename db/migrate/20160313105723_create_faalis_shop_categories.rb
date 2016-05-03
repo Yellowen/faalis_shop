@@ -13,6 +13,6 @@ class CreateFaalisShopCategories < ActiveRecord::Migration
     end
 
     add_index :faalis_shop_categories, :permalink
-    domain_aware :faalis_shop_categories
+    site_aware :faalis_shop_categories
   end
 end

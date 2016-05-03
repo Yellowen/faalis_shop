@@ -18,7 +18,7 @@
 module Faalis::Shop
   class Category < ActiveRecord::Base
     include ::Faalis::Concerns::Authorizable
-    include ::SiteFramework::DomainAware
+    include ::SiteFramework::SiteAware
 
     belongs_to :parent, class_name: self.to_s
     #has_many :products, class_name: 'Faalis::Shop::Product'

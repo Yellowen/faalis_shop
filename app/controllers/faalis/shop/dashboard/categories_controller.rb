@@ -13,6 +13,6 @@ class Faalis::Shop::Dashboard::CategoriesController < ::Dashboard::ApplicationCo
 
   def before_create_hook(resource)
     resource.user = current_user
-    resource.site = SiteFramework::CurrentState.site
+    resource.site = SiteFramework.current_site
   end
 end
