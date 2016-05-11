@@ -1,13 +1,24 @@
 class CreateFaalisShopCategories < ActiveRecord::Migration
   def change
-    create_table :faalis_shop_categories do |t|
+    args = {}
+    args[:id] = :uuid if Faalis::Engine.use_uuid
+
+    create_table :faalis_shop_categories, **args do |t|
       t.string :title
       t.text :description
       t.string :permalink
-      t.integer :parent_id
+
       t.boolean :lock,          default: true
       t.boolean :members_only, default: false
-      t.integer :user_id
+
+      if Faalis::Engine.use_uuid
+        t.uuid :parent_id
+        t.uuid :user_id
+      else
+
+        t.integer :parent_id
+        t.integer :user_id
+      end
 
       t.timestamps null: false
     end
