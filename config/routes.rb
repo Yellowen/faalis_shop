@@ -1,9 +1,13 @@
 Faalis::Shop::Engine.routes.draw do
 
-  get "#{Faalis::Shop::Engine.index_url_prefix}", to: 'posts#index', as: :index
+  get "#{Faalis::Shop::Engine.products_url_prefix}", to: 'products#index', as: :products
+
+  get "#{Faalis::Shop::Engine.categories_url_prefix}", to: 'categories#index', as: :categories
 
   in_dashboard do
-    resources :categories
-    resources :posts
+    scope :shop do
+      resources :categories
+      resources :products
+    end
   end
 end

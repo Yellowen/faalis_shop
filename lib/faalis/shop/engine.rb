@@ -5,7 +5,11 @@ module Faalis
 
       engine_name 'faalis_shop'
 
-      mattr_accessor :index_url_prefix do
+      mattr_accessor :products_url_prefix do
+        'shop'
+      end
+
+      mattr_accessor :categories_url_prefix do
         'shop'
       end
 

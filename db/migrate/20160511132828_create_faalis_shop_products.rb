@@ -1,6 +1,9 @@
 class CreateFaalisShopProducts < ActiveRecord::Migration
   def change
-    create_table :faalis_shop_products do |t|
+    args = {}
+    args[:id] = :uuid if Faalis::Engine.use_uuid
+
+    create_table :faalis_shop_products, **args do |t|
       t.integer :user_id
       t.string :name
       t.float :price
@@ -21,5 +24,6 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
     end
 
     args[:id] = :uuid if Faalis::Engine.use_uuid
+    site_aware :faalis_shop_categories
   end
 end
