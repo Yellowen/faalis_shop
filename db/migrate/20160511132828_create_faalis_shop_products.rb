@@ -24,6 +24,6 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
     end
 
     args[:id] = :uuid if Faalis::Engine.use_uuid
-    site_aware :faalis_shop_categories
+    site_aware :faalis_shop_products
   end
 end
