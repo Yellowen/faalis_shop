@@ -6,7 +6,8 @@ class Faalis::Shop::Dashboard::ProductsController < ::Dashboard::ApplicationCont
   end
 
   in_form do |form|
-    #form.attributes except: [:user]
+    form.attributes except: [:user]
+    form.attributes_properties price: { as: :number }
   end
 
   private
