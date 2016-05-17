@@ -16,6 +16,7 @@ class CreateFaalisShopOrderItems < ActiveRecord::Migration
       end
 
       t.timestamps null: false
+      site_aware :faalis_shop_order_item
     end
   end
 end

@@ -14,11 +14,9 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
       t.timestamps null: false
 
       if Faalis::Engine.use_uuid
-        t.uuid :parent_id
         t.uuid :user_id
       else
         t.integer :user_id
-        t.uuid :parent_id
       end
 
     end

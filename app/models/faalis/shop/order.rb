@@ -6,6 +6,7 @@ module Faalis::Shop
     has_many :order_items
     belongs_to :user, class_name: 'Faalis::User'
 
-    enum status: [ :ordered, :payed, :delivered]
+    enum status: [:ordered, :payed, :delivered]
+
   end
 end

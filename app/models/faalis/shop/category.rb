@@ -21,6 +21,7 @@ module Faalis::Shop
     include ::SiteFramework::SiteAware
 
     belongs_to :parent, class_name: self.to_s
+    belongs_to :user, class_name: '::Faalis::User'
     #has_many :products, class_name: 'Faalis::Shop::Product'
 
     validates_presence_of :title
