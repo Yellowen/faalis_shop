@@ -3,7 +3,7 @@ class CreateFaalisShopOrders < ActiveRecord::Migration
     args = {}
     args[:id] = :uuid if Faalis::Engine.use_uuid
 
-    create_table :faalis_orders, **args do |t|
+    create_table :faalis_shop_orders, **args do |t|
       t.integer :status
       t.float :tax
 
@@ -14,7 +14,7 @@ class CreateFaalisShopOrders < ActiveRecord::Migration
       end
 
       t.timestamps null: false
-      site_aware :faalis_shop_order
     end
+    site_aware :faalis_shop_orders
   end
 end

@@ -4,6 +4,7 @@ module Faalis::Shop
     include ::SiteFramework::SiteAware
 
     belongs_to :order
+    belongs_to :product
     belongs_to :user, class_name: 'Faalis::User'
 
     validates_presence_of :quantity

@@ -1,5 +1,5 @@
 module Faalis::Shop
-  class Shop::OrderItemsPolicy < ApplicationPolicy
+  class OrderItemPolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         scope
