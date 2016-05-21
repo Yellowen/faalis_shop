@@ -11,7 +11,7 @@ module Faalis::Shop
         password_confirmation: '11111111')
       @category = Fabricate(:category, user: @user, title: 'test category', permalink: 'test-category', members_only: false)
 
-      Fabricate(:product, user: @user, name: 'test', permalink: 'test-1', category: @category, price: 343, lock: false, description: 'sample desc')
+      Fabricate(:product, user: @user, name: 'test', permalink: 'test-1', category: @category, price: 343, description: 'sample desc')
 
       Faalis::Engine.amd = false
     end
