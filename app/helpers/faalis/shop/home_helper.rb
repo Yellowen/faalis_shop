@@ -1,4 +1,4 @@
 module Faalis::Shop
-  module Shop::HomeHelper
+  module HomeHelper
   end
 end
