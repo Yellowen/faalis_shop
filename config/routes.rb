@@ -12,4 +12,6 @@ Faalis::Shop::Engine.routes.draw do
       resources :order_items
     end
   end
+
+  root 'home#index'
 end
