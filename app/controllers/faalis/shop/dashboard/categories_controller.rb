@@ -8,8 +8,8 @@ class Faalis::Shop::Dashboard::CategoriesController < ::Dashboard::ApplicationCo
   in_form do |form|
     form.attributes except: [:user]
 
-    form.attributes_properties parent: { as: :select }
-    form.attributes_properties site: { as: :select }
+    form.attributes_properties parent: { as: :select },
+      site: { as: :select }
   end
 
   private
