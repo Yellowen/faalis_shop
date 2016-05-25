@@ -14,7 +14,7 @@ module Faalis
       end
 
       mattr_accessor :default_layout do
-        'shop'
+        'shop/application'
       end
 
     end
