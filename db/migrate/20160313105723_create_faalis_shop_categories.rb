@@ -8,7 +8,7 @@ class CreateFaalisShopCategories < ActiveRecord::Migration
       t.text :description
       t.string :permalink
 
-      t.boolean :lock,          default: true
+      t.boolean :lock,          default: false
       t.boolean :members_only, default: false
 
       if Faalis::Engine.use_uuid

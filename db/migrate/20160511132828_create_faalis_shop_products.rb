@@ -10,6 +10,7 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
       t.boolean :lock
       t.boolean :private
       t.text :description
+      t.string :permalink
 
       t.timestamps null: false
 

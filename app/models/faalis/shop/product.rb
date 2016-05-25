@@ -8,6 +8,9 @@ module Faalis::Shop
 
     validates_presence_of :name
     validates_presence_of :category_id
+    validates_presence_of :permalink
+    validates :permalink, uniqueness: true
+    validates_presence_of :permalink
 
     scope :available, -> { where(lock: false) }
   end
