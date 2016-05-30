@@ -12,19 +12,27 @@ module Faalis::Shop
     end
 
 
-    test "won't save without a title" do
+    test "won't save without a name" do
       subject = @@subject.new(user: @user,
-        category: @category)
+        category: @category, permalink: 'product-1')
 
       result = subject.save
 
       assert_not result, msg: 'Product saved whithout name.'
     end
 
+    test "won't save without a category" do
+      subject = @@subject.new(user: @user,
+        name: 'product 1', permalink: 'product-1')
+
+      result = subject.save
+
+      assert_not result, msg: 'Product saved whithout category.'
+    end
 
     test "won't save without a user" do
-      subject = @@subject.new(name: 'product-1',
-        category: @category)
+      subject = @@subject.new(name: 'product 1',
+        category: @category, permalink: 'product-1')
 
       failed = false
       begin
@@ -37,9 +45,9 @@ module Faalis::Shop
       assert failed, msg: 'Product should not save without a user'
     end
 
-    test "won't save without a category" do
+    test "won't save without a permalink" do
       subject = @@subject.new(name: 'product-1',
-        user: @user)
+        category: @category, user: @user)
 
       failed = false
       begin
@@ -51,6 +59,5 @@ module Faalis::Shop
 
       assert failed, msg: 'Product should not save without a user'
     end
-
   end
 end
