@@ -27,7 +27,7 @@ module Faalis::Shop
     validates_presence_of :title
     validates_presence_of :permalink
     validates :permalink, uniqueness: true
-    validates :permalink, uniqueness: true
+
 
     scope :available, -> { where(lock: false) }
     scope :visible, lambda { |signed_in| signed_in ? all : where(members_only: false) }
