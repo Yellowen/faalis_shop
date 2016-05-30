@@ -1,12 +1,10 @@
 module Faalis::Shop
   class HomeController < ApplicationController
-    before_action :asd
+
+    layout Faalis::Shop::Engine.default_layout
+
     def index
     end
 
-    private
-    def asd
-      puts "<<<<<<<<<<<<<<<", view_paths
-    end
   end
 end
