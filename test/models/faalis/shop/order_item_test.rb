@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: faalis_shop_order_items
+#
+#  id         :integer          not null, primary key
+#  quantity   :integer
+#  total      :integer
+#  product_id :integer
+#  user_id    :integer
+#  order_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  site_id    :integer
+#
+
 require 'test_helper'
 
 module Faalis::Shop
