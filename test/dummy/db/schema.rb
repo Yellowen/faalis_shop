@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502110138) do
+ActiveRecord::Schema.define(version: 20160516123855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,46 @@ ActiveRecord::Schema.define(version: 20160502110138) do
   end
 
   add_index "faalis_shop_categories", ["permalink"], name: "index_faalis_shop_categories_on_permalink", using: :btree
+
+  create_table "faalis_shop_order_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "total"
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "site_id"
+  end
+
+  add_index "faalis_shop_order_items", ["site_id"], name: "index_faalis_shop_order_items_on_site_id", using: :btree
+
+  create_table "faalis_shop_orders", force: :cascade do |t|
+    t.integer  "status"
+    t.float    "tax"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "site_id"
+  end
+
+  add_index "faalis_shop_orders", ["site_id"], name: "index_faalis_shop_orders_on_site_id", using: :btree
+
+  create_table "faalis_shop_products", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.integer  "category_id"
+    t.boolean  "lock"
+    t.boolean  "private"
+    t.text     "description"
+    t.string   "permalink"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "site_id"
+  end
+
+  add_index "faalis_shop_products", ["site_id"], name: "index_faalis_shop_products_on_site_id", using: :btree
 
   create_table "faalis_user_messages", force: :cascade do |t|
     t.integer  "sender_id"
