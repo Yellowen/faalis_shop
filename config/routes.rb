@@ -13,6 +13,7 @@ Faalis::Routes.draw(::Faalis::Shop::Engine) do
   plugin do
     #get "#{Faalis::Shop::Engine.products_url_prefix}", to: 'products#index', as: :products
     #get "#{Faalis::Shop::Engine.categories_url_prefix}", to: 'categories#index', as: :categories
-    get '', to: 'home#index'
+    get '', to: 'products#index'
+    get 'orders', to: 'orders#index'
   end
 end
