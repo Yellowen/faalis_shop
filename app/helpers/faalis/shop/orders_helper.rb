@@ -1,4 +1,4 @@
 module Faalis::Shop
-  module Shop::OrdersHelper
+  module OrdersHelper
   end
 end
