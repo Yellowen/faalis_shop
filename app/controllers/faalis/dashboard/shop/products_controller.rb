@@ -1,5 +1,10 @@
-class Faalis::Shop::Dashboard::ProductsController < ::Dashboard::ApplicationController
-  engine 'Faalis::Shop::Engine'
+class Faalis::Dashboard::Shop::ProductsController < ::Dashboard::ApplicationController
+  #engine 'Faalis::Engine'
+
+
+  engine 'Faalis::Engine'
+
+  route_namespace "shop"
 
   in_index do |resource|
     #resource.attributes :title, :permalink, :parent, :lock, :members_only

@@ -1,4 +1,4 @@
-class Faalis::Shop::Dashboard::OrdersController < Dashboard::ApplicationController
+class Faalis::Dashboard::Shop::OrdersController < Dashboard::ApplicationController
   engine 'Faalis::Shop::Engine'
 
   in_index do |resource|
