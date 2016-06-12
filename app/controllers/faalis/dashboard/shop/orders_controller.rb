@@ -7,7 +7,6 @@ class Faalis::Dashboard::Shop::OrdersController < Dashboard::ApplicationControll
 
   in_form do |form|
     form.attributes except: [:user] unless current_user.admin?
-    form.attributes_properties tax: { as: :number }
   end
 
   def before_create_hook(resource)
