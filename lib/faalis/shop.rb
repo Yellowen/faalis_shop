@@ -1,5 +1,5 @@
 require 'faalis'
-require 'redcarpet'
+require 'kramdown'
 require 'faalis/tags'
 
 module Faalis
