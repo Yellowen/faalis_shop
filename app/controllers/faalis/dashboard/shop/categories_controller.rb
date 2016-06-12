@@ -11,11 +11,4 @@ class Faalis::Dashboard::Shop::CategoriesController < ::Dashboard::ApplicationCo
     form.attributes_properties parent: { as: :select },
       site: { as: :select }
   end
-
-  private
-
-  def before_create_hook(resource)
-    resource.user = current_user
-    resource.site = SiteFramework.current_site
-  end
 end

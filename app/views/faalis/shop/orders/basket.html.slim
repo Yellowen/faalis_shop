@@ -11,15 +11,20 @@
         th
           = t('amount')
         th
+          = t('price')
+        th
+          = t('tax')
+        th
           = t('Operation')
     tbody
       - @orders.order_items.each do |order|
-      tr
-        td
-          = order.name
-        td
-          input
-        td
+        tr
+         td = order.product.name
+         td = order.product.price
+         td = order.product.tax
+         td
+           input
+         td
           .btn.btn-warning remove
   btn.btn-success update
   btn.btn-success payment

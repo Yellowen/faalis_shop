@@ -21,5 +21,8 @@ module Faalis::Shop
 
     enum status: [:ordered, :payed, :delivered]
 
+    def name
+      id
+    end
   end
 end

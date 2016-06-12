@@ -25,5 +25,6 @@ module Faalis::Shop
     validates_presence_of :quantity
     validates_presence_of :total
     validates_presence_of :order
+    validates_presence_of :product_id
   end
 end

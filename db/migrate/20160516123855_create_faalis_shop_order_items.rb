@@ -8,7 +8,7 @@ class CreateFaalisShopOrderItems < ActiveRecord::Migration
       t.integer :total
 
       if Faalis::Engine.use_uuid
-        t.integer :product_id
+        t.uuid :product_id
         t.uuid :user_id
         t.uuid :order_id
       else
