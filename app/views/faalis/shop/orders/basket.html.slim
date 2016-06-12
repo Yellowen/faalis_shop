@@ -1,0 +1,25 @@
+.container
+  h2
+    = t('Shopping cart')
+  p
+    = t('Check your items and then select payment button')
+  table.table
+    thead
+      tr
+        th
+          = t('name')
+        th
+          = t('amount')
+        th
+          = t('Operation')
+    tbody
+      - @orders.order_items.each do |order|
+      tr
+        td
+          = order.name
+        td
+          input
+        td
+          .btn.btn-warning remove
+  btn.btn-success update
+  btn.btn-success payment

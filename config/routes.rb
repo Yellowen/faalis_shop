@@ -1,4 +1,5 @@
 Faalis::Routes.draw(::Faalis::Shop::Engine) do
+#::Faalis::Shop::Engine.routes.draw do
   faalis do
     in_dashboard do |app|
       namespace :shop do
@@ -11,9 +12,7 @@ Faalis::Routes.draw(::Faalis::Shop::Engine) do
   end
 
   plugin do
-    #get "#{Faalis::Shop::Engine.products_url_prefix}", to: 'products#index', as: :products
-    #get "#{Faalis::Shop::Engine.categories_url_prefix}", to: 'categories#index', as: :categories
     get '', to: 'products#index'
-    get 'orders', to: 'orders#index'
+    get 'basket', to: 'orders#basket'
   end
 end
