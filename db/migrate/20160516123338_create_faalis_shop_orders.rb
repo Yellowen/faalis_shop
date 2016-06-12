@@ -5,7 +5,6 @@ class CreateFaalisShopOrders < ActiveRecord::Migration
 
     create_table :faalis_shop_orders, **args do |t|
       t.integer :status
-      t.float :tax
 
       if Faalis::Engine.use_uuid
         t.uuid :user_id
