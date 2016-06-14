@@ -9,7 +9,8 @@ module Faalis::Shop
     end
 
     def basket
-      @orders = Order.find_by(user: current_user, status: :ordered)
+      #@orders = Order.find_by(user: current_user, status: :ordered)
+      @orders = session[:basket]
     end
 
   end

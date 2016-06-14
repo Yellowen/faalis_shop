@@ -5,8 +5,18 @@ module Faalis::Shop
     layout Faalis::Shop::Engine.default_layout
 
     def index
-      @products = Product.find_by(user: current_user)
+      # TODO: check members only
+      @categories = Category.where(lock: false)
+
+      if params[:category_id]
+        @products = Product.where(lock: false, category_id: params[:category_id])
+      else
+        @products = Product.where(lock: false)
+      end
     end
 
+    def show
+      @product = Product.find(permalik: params[:permalik], lock: false)
+    end
   end
 end

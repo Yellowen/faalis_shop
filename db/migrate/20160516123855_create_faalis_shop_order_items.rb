@@ -4,7 +4,7 @@ class CreateFaalisShopOrderItems < ActiveRecord::Migration
     args[:id] = :uuid if Faalis::Engine.use_uuid
 
     create_table :faalis_shop_order_items, **args do |t|
-      t.integer :quantity
+      t.integer :quantity, default: 1
       t.integer :total
 
       if Faalis::Engine.use_uuid
