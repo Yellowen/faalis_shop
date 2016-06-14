@@ -6,7 +6,6 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
     create_table :faalis_shop_products, **args do |t|
       t.string :name
       t.float :price
-      t.integer :category_id
       t.boolean :lock
       t.boolean :private
       t.text :description
@@ -17,8 +16,10 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
 
       if Faalis::Engine.use_uuid
         t.uuid :user_id
+        t.uuid :category_id
       else
         t.integer :user_id
+        t.integer :category_id
       end
 
     end
