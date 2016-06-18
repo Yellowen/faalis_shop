@@ -1,0 +1,5 @@
+= render 'categories'
+h2 =t('Products')
+ul
+  - @products.each do |product|
+    = link_to product.name, product_path(product.permalink)

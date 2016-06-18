@@ -2,6 +2,8 @@ require_dependency "faalis/application_controller"
 
 module Faalis::Shop
   class OrdersController < ::ApplicationController
+    layout Faalis::Shop::Engine.default_layout
+
     before_action :authenticate_user!
 
     def index
