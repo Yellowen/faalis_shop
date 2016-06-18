@@ -20,14 +20,14 @@
           = t('Operation')
 
     tbody
-      - @orders.order_items.each do |order|
+      - @orders.each do |order|
         tr
-         td = order.product.name
+         td = order['name']
          td
-           input value= order.quantity
-         td = order.product.price
-         td = order.total
-         td = order.product.tax
+           input value= order['quantity']
+         td = order['price']
+         td = order['total']
+         td = order['tax']
   .btn.btn-success pay
   .btn.btn-success update
-  .btn.btn-success cansel
+  .btn.btn-success cancel

@@ -15,7 +15,7 @@ Faalis::Routes.draw(::Faalis::Shop::Engine) do
     get '', to: 'products#index'
     get 'products/:permalink', to: 'products#show' ,as: 'product'
     get 'categories/:permalink', to: 'products#index', as: 'category'
-    #get 'basket', to: 'orders#basket'
+    get 'basket', to: 'orders#basket'
     resources 'orders'
     #get 'orders', to: 'orders#index'
     #destroy '', to: 'oders#destroy'
