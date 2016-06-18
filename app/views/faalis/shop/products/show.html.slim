@@ -3,4 +3,5 @@ h2=@product.name
 h4=@product.price
 h6=@product.tax
 p=@product.description
-a.btn.btn-success BUY
+
+=link_to(('Add to basket'), orderes_path(@product.id), class: 'btn btn-success')
