@@ -18,16 +18,23 @@
           = t('tax')
         th
           = t('Operation')
-
     tbody
-      - @orders.each do |order|
+      - if @orders.nil?
         tr
-         td = order['name']
-         td
-           input value= order['quantity']
-         td = order['price']
-         td = order['total']
-         td = order['tax']
-  .btn.btn-success pay
-  .btn.btn-success update
-  .btn.btn-success cancel
+          td
+            p=s('Your basket is empty!')
+      - else
+        - @orders.each do |order|
+          tr
+            td = order['name']
+            td
+              input value=order['amount']
+            td = order['price']
+            td = order['total']
+            td = order['tax']
+            td
+                = link_to(t('Delete'),  destroy_order_path(order['id']),  method: :delete, data: { confirm: t('Are you sure?') })
+
+  .btn.btn-success=t('Pay')
+  .btn.btn-=t('Update and pay')
+  .btn.btn-warning=t('Cancel')

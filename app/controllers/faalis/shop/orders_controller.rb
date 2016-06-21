@@ -16,11 +16,11 @@ module Faalis::Shop
     end
 
     def new
-      product = Product.find_by(params[:id])
-      if product.exists?
+      product = Product.find_by(id: params[:id])
+      if !product.nil?
         session[:basket] = [] if session[:basket].nil?
         product_exists = session[:basket].any? {|item| item['id'] == product.id}
-        if product_exists.nil?
+        if !product_exists
           product_hash = {}
           product_hash[:id] = product.id
           product_hash[:name] = product.name
@@ -32,14 +32,23 @@ module Faalis::Shop
           session[:basket] = []
           session[:basket] << product_hash
         else
-
+          session[:basket].each do |item|
+            item['amount'] = item['amount']+1 if item['name']== product.name
+          end
         end
 
         redirect_to basket_path
       else
         flash[:error] = s("The product not found!")
+        redirect_to basket_path
       end
     end
 
+    def destroy
+      if params[:id]
+        session[:basket].each { |item| session[:basket].delete(item) if item['id'] == params[:id]}
+        redirect_to basket_path
+      end
+    end
   end
 end
