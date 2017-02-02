@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.licenses = ['GPL-2']
   s.name        = 'faalis-shop'
   s.version     = Faalis::Shop::VERSION
-  s.authors     = ['Sameer Rahmani']
-  s.email       = ['lxsameer@gnu.org']
+  s.authors     = ['Sameer Rahmani', 'Behnam Ahmad khan Beigi']
+  s.email       = ['lxsameer@gnu.org', 'yottanami@gnu.org']
   s.homepage    = "http://github.com/Yellowen/faalis_shop"
   s.summary     = 'Shop engine for Faalis platform'
   s.description = 'Shop engine for Faalis platform.'
@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'faalis', '> 2'
   s.add_dependency 'kramdown'
   s.add_dependency 'site_framework'
-  s.add_dependency 'faalis-tags'
+#  s.add_dependency 'faalis-tags'
 end

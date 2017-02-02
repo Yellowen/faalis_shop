@@ -57,5 +57,5 @@ group :development, :test do
   gem 'faker'
   gem 'jquery-turbolinks'
   gem 'guard-cane'
-  gem 'faalis-tags', path: '../faalis_tags'
+#  gem 'faalis-tags', path: '../faalis_tags'
 end

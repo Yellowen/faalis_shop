@@ -1,9 +1,7 @@
-module Faalis::Shop
-  class ProductPolicy < ApplicationPolicy
-    class Scope < Scope
-      def resolve
-        scope
-      end
+class Faalis::Shop::ProductPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope
     end
   end
 end

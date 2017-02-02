@@ -1,6 +1,6 @@
 require 'faalis'
 require 'kramdown'
-require 'faalis/tags'
+#require 'faalis/tags'
 
 module Faalis
   module Shop
