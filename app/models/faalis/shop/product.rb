@@ -23,6 +23,7 @@ module Faalis::Shop
 
     belongs_to :category
     belongs_to :user, class_name: 'Faalis::User'
+    has_many :product_images, class_name: 'Faalis::Shop::Product'
 
     validates_presence_of :name
     validates_presence_of :category_id

@@ -22,5 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'faalis', '> 2'
   s.add_dependency 'kramdown'
   s.add_dependency 'site_framework'
-#  s.add_dependency 'faalis-tags'
+  s.add_dependency 'paperclip', "~> 5.0.0"
+  #  s.add_dependency 'faalis-tags'
 end
