@@ -5,6 +5,7 @@ Faalis::Routes.draw(::Faalis::Shop::Engine) do
       namespace :shop do
         resources :categories
         resources :products
+        resources :product_images
         resources :orders
         resources :order_items
       end
