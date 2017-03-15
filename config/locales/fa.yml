@@ -4,12 +4,13 @@ fa:
  faalis:
   shop:
    dashboard:
-     shop: فروشگاه
-     products: محصولات
-     categories: دسته‌بندی‌ها
-     orders: سفارش‌ها
-     order_items: اقلام سفارش
-     profiles: پروفایل
+    shop: فروشگاه
+    products: محصولات
+    categories: دسته‌بندی‌ها
+    orders: سفارش‌ها
+    order_items: اقلام سفارش
+    profiles: پروفایل
+
  resources:
   faalis/shop/product: محصول
   faalis/shop/category: دسته
@@ -21,8 +22,8 @@ fa:
  Yedojin description: منو
  products: محصولات
  orders: سفارش‌ها
+ categories: دسته‌بندی ها
  main_app:
-  city: شهر
   id: کد
   name: نام
   price: قیمت
@@ -50,3 +51,34 @@ fa:
   referrer: ارجاع
   birth_date: تاریخ تولد
   address: آدرس
+  referrer: ارجاع
+ forms:
+   profile:
+     first_name: نام
+     last_name: نام خانوادگی
+     birth_date: تاریخ تولد
+     phone: تلفن
+     city_id: کد شهر
+     referrer_id: کد ارجاع
+     address: آدرس
+     user: کاربر
+   faalis:
+    shop:
+     product:
+      name: نام
+      price: قیمت
+      description: شرح
+      permalink: لینک
+      lock: قفل
+      private: خصوصی
+      tax: مالیات
+      site: سایت
+      category: دسته بندی
+     category:
+       title: عنوان
+       description: شرح
+       permalink: لینک
+       lock: قفل
+       site: سایت
+       parent: والد
+       members_only: فقط کاربران
