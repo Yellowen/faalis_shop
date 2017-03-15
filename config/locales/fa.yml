@@ -1,2 +1,52 @@
 ---
 fa:
+ profiles: پروفایل‌ها
+ faalis:
+  shop:
+   dashboard:
+     shop: فروشگاه
+     products: محصولات
+     categories: دسته‌بندی‌ها
+     orders: سفارش‌ها
+     order_items: اقلام سفارش
+     profiles: پروفایل
+ resources:
+  faalis/shop/product: محصول
+  faalis/shop/category: دسته
+  faalis/shop/order: سفارش
+  faalis/shop/order_item: سفارش کالای
+  profile: پروفایل
+ Profile: پروفایل
+ Profiles: پروفایل‌ها
+ Yedojin description: منو
+ products: محصولات
+ orders: سفارش‌ها
+ main_app:
+  city: شهر
+  id: کد
+  name: نام
+  price: قیمت
+  lock: دسترسی
+  category: دسته‌بندی
+  site: مکان
+  updated_at: به روز رسانی
+  created_at: ایجاد شده
+  description: شرح
+  permalink: لینک
+  private: خصوصی
+  tax: مالیات
+  user: کاربر
+  title: عنوان
+  parent: والد
+  members_only: اختصاصی
+  status: وضعیت
+  quantity: مقدار
+  total: کل
+  order: سفارش
+  product: محصول
+  first_name: نام
+  last_name: نام‌خانوادگی
+  phone: تلفن
+  referrer: ارجاع
+  birth_date: تاریخ تولد
+  address: آدرس
