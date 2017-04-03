@@ -1,7 +1,10 @@
 Faalis::Routes.draw(::Faalis::Shop::Engine) do
 #::Faalis::Shop::Engine.routes.draw do
   faalis do
-    in_dashboard do |app|
+    in_dashboard do
+    resources :product_features
+    resources :feature_values
+    resources :features |app|
       namespace :shop do
         resources :categories
         resources :products
