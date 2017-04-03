@@ -1,5 +1,5 @@
 module Faalis::Shop
-  class Shop::FeatureValuePolicy < ApplicationPolicy
+  class FeatureValuePolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         scope
