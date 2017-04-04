@@ -11,7 +11,7 @@ class Faalis::Dashboard::Shop::ProductsController < ::Dashboard::ApplicationCont
   end
 
   in_form do |form|
-    form.attributes except: [:user]
+    form.attributes except: [:user, :site]
     form.attributes_properties tax: { as: :number }, price: { as: :number }
   end
 
