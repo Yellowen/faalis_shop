@@ -5,6 +5,7 @@ module Faalis::Shop
 
     belongs_to :feature
     belongs_to :feature_value
+    belongs_to :product
     validates_presence_of :value
   end
 end

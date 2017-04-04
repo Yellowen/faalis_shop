@@ -4,6 +4,6 @@ module Faalis::Shop
     include ::SiteFramework::SiteAware
 
     belongs_to :feature
-    validates_presence_of :name
+    validates_presence_of :value
   end
 end
