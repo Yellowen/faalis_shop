@@ -33,18 +33,28 @@ module Faalis::Shop
 
     scope :available, -> { where(lock: false) }
 
+    # Price + tax without discount and special offers
+    def price_with_tax
+      unless self.tax.nil? || self.tax <= 0
+        (self.price + ((self.price / 100) * self.tax)).ceil
+      else
+        self.price
+      end
+    end
+
     def final_price
-      if self.special_price > 0
-        if self.tax > 0
-          self.special_price + ((self.special_price.to_f / self.tax.to_f) * 100.to_f)
+      unless self.special_price.nil? || self.special_price <= 0
+        unless self.tax.nil? || self.tax <= 0
+          (self.special_price + ((self.special_price / 100) * self.tax)).ceil
         else
-          self.special_price
+          self.special_price.ceil
         end
       else
-        if self.tax > 0
-          self.price + ((self.special_price.to_f / self.tax.to_f) * 100.to_f) - ((self.special_price.to_f / self.discount.to_f) * 100.to_f)
+        unless self.tax.nil? || self.tax <= 0
+          price = self.price - ((self.price / 100) * self.discount.to_i)
+          price + ((price / 100) * self.tax).ceil
         else
-          self.special_price - ((self.special_price.to_f / self.discount.to_f) * 100.to_f)
+          (self.price - ((self.price / 100) * self.discount.to_i)).ceil
         end
       end
     end
