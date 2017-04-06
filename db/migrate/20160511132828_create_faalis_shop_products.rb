@@ -5,12 +5,15 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
 
     create_table :faalis_shop_products, **args do |t|
       t.string :name
-      t.float :price
+      t.decimal :price
+      t.decimal :tax
+      t.decimal :special_price
+      t.decimal :discount
       t.boolean :lock
       t.boolean :private
       t.text :description
       t.string :permalink
-      t.float :tax
+
 
       t.timestamps null: false
 

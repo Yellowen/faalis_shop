@@ -32,5 +32,21 @@ module Faalis::Shop
     validates_presence_of :permalink
 
     scope :available, -> { where(lock: false) }
+
+    def final_price
+      if self.special_price > 0
+        if self.tax > 0
+          self.special_price + ((self.special_price.to_f / self.tax.to_f) * 100.to_f)
+        else
+          self.special_price
+        end
+      else
+        if self.tax > 0
+          self.price + ((self.special_price.to_f / self.tax.to_f) * 100.to_f) - ((self.special_price.to_f / self.discount.to_f) * 100.to_f)
+        else
+          self.special_price - ((self.special_price.to_f / self.discount.to_f) * 100.to_f)
+        end
+      end
+    end
   end
 end
