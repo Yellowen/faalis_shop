@@ -29,7 +29,7 @@ fa:
   price: قیمت
   lock: دسترسی
   category: دسته‌بندی
-  site: مکان
+  site: وب سایت
   updated_at: به روز رسانی
   created_at: ایجاد شده
   description: شرح
@@ -52,6 +52,8 @@ fa:
   birth_date: تاریخ تولد
   address: آدرس
   referrer: ارجاع
+  special_price: تخفیف ویژه
+  discount: تخفیف
  forms:
    profile:
      first_name: نام
@@ -74,6 +76,13 @@ fa:
       tax: مالیات
       site: سایت
       category: دسته بندی
+     order_item:
+         quantity: مقدار
+         total: کل
+         site: سایت
+         product: محصول
+         order: سفارش
+         user: کاربر
      category:
        title: عنوان
        description: شرح
@@ -82,3 +91,7 @@ fa:
        site: سایت
        parent: والد
        members_only: فقط کاربران
+     order:
+       status: وضعیت
+       site: سایت
+       user: کاربر

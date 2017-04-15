@@ -18,6 +18,7 @@ module Faalis::Shop
     def show
       @categories = Category.where(lock: false)
       @product = Product.find_by(permalink: params[:permalink], lock: false)
+      @products = Product.where(lock: false, category_id: params[:category_id]).last(4)
     end
   end
 end
