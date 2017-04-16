@@ -10,6 +10,7 @@ fa:
     orders: سفارش‌ها
     order_items: اقلام سفارش
     profiles: پروفایل
+    features: ویژگی‌ها
 
  resources:
   faalis/shop/product: محصول
@@ -76,6 +77,8 @@ fa:
       tax: مالیات
       site: سایت
       category: دسته بندی
+      discount: تخفیف
+      special_price: قیمت ویژه
      order_item:
          quantity: مقدار
          total: کل
