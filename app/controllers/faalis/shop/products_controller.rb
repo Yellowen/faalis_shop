@@ -20,6 +20,7 @@ module Faalis::Shop
       @product = Product.find_by(permalink: params[:permalink], lock: false)
       @category = @product.category
       @products = @category.products.last(4)
+      @last_products = Product.last(3)
     end
   end
 end
