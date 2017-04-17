@@ -17,11 +17,12 @@ module Faalis::Shop
 
     def show
       @categories = Category.where(lock: false)
-      @product = Product.find_by(permalink: params[:permalink], lock: false)
+      @product = Product.find_by(permalink: params[:permalink])
       @category = @product.category
-      @products = @category.products.last(4)
       @last_products = Product.last(3)
       @special_offers = Product.where.not(special_price: nil).last(3)
+      @same_products = @category.products.last(4)
+      @last_products = Product.where(lock: false).last(3)
     end
   end
 end

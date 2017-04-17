@@ -9,7 +9,7 @@ class CreateFaalisShopProducts < ActiveRecord::Migration
       t.decimal :tax
       t.decimal :special_price
       t.decimal :discount
-      t.boolean :lock
+      t.boolean :lock, default: false
       t.boolean :private
       t.text :description
       t.string :permalink
