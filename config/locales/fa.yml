@@ -29,6 +29,7 @@ fa:
     profiles: پروفایل
     features: ویژگی‌ها
 
+
  resources:
   faalis/shop/product: محصول
   faalis/shop/category: دسته
@@ -36,6 +37,7 @@ fa:
   faalis/shop/order_item: سفارش کالای
   faalis/shop/feature: ویژگی
   faalis/shop/product_feature: ویژگی
+  faalis/shop/product_image: تصویر
   profile: پروفایل
  Profile: پروفایل
  Profiles: پروفایل‌ها
@@ -131,3 +133,9 @@ fa:
        user: کاربر
      feature:
        name: نام
+     product_image:
+       name: نام
+       description: شرح
+       site: سایت
+       product: محصول
+       image: انتخاب عکس
