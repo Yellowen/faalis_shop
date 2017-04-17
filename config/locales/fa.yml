@@ -1,5 +1,22 @@
 ---
 fa:
+ faalis/shop/product:
+   show:
+    id: کد
+    name: نام
+    price: قیمت
+    tax: مالیات
+    special_price: قیمت ویژه
+    discount: تخفیف
+    lock: قفل
+    private: خصوصی
+    description: شرح کالا
+    permalink: لینک اختصاصی
+    created_at: تاریخ ایجاد
+    updated_at: بروز رسانی
+    site: سایت
+    category: دسته‌بندی
+    user: کاربر
  profiles: پروفایل‌ها
  faalis:
   shop:
@@ -17,6 +34,8 @@ fa:
   faalis/shop/category: دسته
   faalis/shop/order: سفارش
   faalis/shop/order_item: سفارش کالای
+  faalis/shop/feature: ویژگی
+  faalis/shop/product_feature: ویژگی
   profile: پروفایل
  Profile: پروفایل
  Profiles: پروفایل‌ها
@@ -24,6 +43,10 @@ fa:
  products: محصولات
  orders: سفارش‌ها
  categories: دسته‌بندی ها
+ features: ویژگی‌ها
+ show: نمایش محصول
+ product_images: تصاویر محصول
+ product_features: ویژگی‌های محصول
  main_app:
   id: کد
   name: نام
@@ -55,6 +78,9 @@ fa:
   referrer: ارجاع
   special_price: تخفیف ویژه
   discount: تخفیف
+  feature: ویژگی
+  value: مقدار
+  feature_value: مقدار ویژگی
  forms:
    profile:
      first_name: نام
@@ -79,6 +105,11 @@ fa:
       category: دسته بندی
       discount: تخفیف
       special_price: قیمت ویژه
+     product_feature:
+        value: مقدار
+        feature: ویژگی
+        product: محصول
+        feature_value: واحد محاسباتی
      order_item:
          quantity: مقدار
          total: کل
@@ -98,3 +129,5 @@ fa:
        status: وضعیت
        site: سایت
        user: کاربر
+     feature:
+       name: نام
