@@ -8,7 +8,7 @@ module Faalis::Shop
     has_attached_file(:image,
       styles: {
         original: ['600x600', :png],
-        thumb: ['270x360#', :png]
+        thumb: ['360x270#', :png]
       },
       url: '/:class/:attachment/:style/:basename.:extension',
       path: ':rails_root/public/:class/:attachment/:style/:basename.:extension')
